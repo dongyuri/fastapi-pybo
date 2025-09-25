@@ -4,13 +4,6 @@ from domain.question.question_schema import QuestionCreate
 from models import Question
 from sqlalchemy.orm import Session
 
-'''
-def get_question_list(db: Session):
-    question_list = db.query(Question) \
-        .order_by(Question.create_date.desc()) \
-        .all()
-    return question_list
-'''
 def get_question_list(db: Session, skip: int=0, limit: int=10):
     _question_list = db.query(Question) \
         .order_by(Question.create_date.desc())
